@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Policy {
 
-    // Data members
+    // Data members (did this in class)
     private String policyNumber;
     private String providerName;
     private String policyHolderFirstName;
@@ -12,7 +12,7 @@ public class Policy {
     private double policyHolderHeight;
     private double policyHolderWeight;
 
-    // No-arg, setting baselines
+    // No arg, setting baselines
         public Policy() {
         this.policyNumber = "";
         this.providerName = "";
@@ -48,7 +48,7 @@ public class Policy {
     public double getPolicyHolderHeight() { return policyHolderHeight; }
     public double getPolicyHolderWeight() { return policyHolderWeight; }
 
-    // BMI Calculation
+    // BMI 
     public double calculateBMI() {
         return (policyHolderWeight * 703) / (policyHolderHeight * policyHolderHeight);
     }

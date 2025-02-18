@@ -4,7 +4,13 @@ public class PolicyDemo {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
 
-        // User input
+        // get the user input
+        
+        //base
+        //System.out.print("Please enter the _____: ");
+        //String _______ = keyboard.nextLine();
+
+
         System.out.print("Please enter the Policy Number: ");
         String policyNumber = keyboard.nextLine();
 
@@ -19,7 +25,7 @@ public class PolicyDemo {
 
         System.out.print("Please enter the Policyholder’s Age: ");
         int policyHolderAge = keyboard.nextInt();
-        keyboard.nextLine();  // Consume newline
+        keyboard.nextLine();  
 
         System.out.print("Please enter the Policyholder’s Smoking Status (smoker/non-smoker): ");
         String policyHolderSmokingStatus = keyboard.nextLine();
@@ -30,12 +36,12 @@ public class PolicyDemo {
         System.out.print("Please enter the Policyholder’s Weight (in pounds): ");
         double policyHolderWeight = keyboard.nextDouble();
 
-        // Create Policy object
+        // Create the object
         Policy policy = new Policy(policyNumber, providerName, policyHolderFirstName,
                                    policyHolderLastName, policyHolderAge, policyHolderSmokingStatus,
                                    policyHolderHeight, policyHolderWeight);
 
-        // Display policy information
+        // display the final outputs 
         System.out.println("\nPolicy Number: " + policy.getPolicyNumber());
         System.out.println("Provider Name: " + policy.getProviderName());
         System.out.println("Policyholder’s First Name: " + policy.getPolicyHolderFirstName());
