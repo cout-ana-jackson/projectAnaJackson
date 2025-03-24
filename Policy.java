@@ -74,4 +74,77 @@ public class Policy {
     /**
      * Gets the first name of the policyholder.
      *
-     * @return The first name 
+     * @return The first name of the policyholder.
+     */
+    public String getPolicyHolderFirstName() {
+        return policyHolderFirstName;
+    }
+
+    /**
+     * Gets the last name of the policyholder.
+     *
+     * @return The last name of the policyholder.
+     */
+    public String getPolicyHolderLastName() {
+        return policyHolderLastName;
+    }
+
+    /**
+     * Gets the age of the policyholder.
+     *
+     * @return The age of the policyholder.
+     */
+    public int getPolicyHolderAge() {
+        return policyHolderAge;
+    }
+
+    /**
+     * Gets the smoking status of the policyholder.
+     *
+     * @return The smoking status ("smoker" or "non-smoker").
+     */
+    public String getPolicyHolderSmokingStatus() {
+        return policyHolderSmokingStatus;
+    }
+
+    /**
+     * Gets the height of the policyholder.
+     *
+     * @return The height of the policyholder in inches.
+     */
+    public double getPolicyHolderHeight() {
+        return policyHolderHeight;
+    }
+
+    /**
+     * Gets the weight of the policyholder.
+     *
+     * @return The weight of the policyholder in pounds.
+     */
+    public double getPolicyHolderWeight() {
+        return policyHolderWeight;
+    }
+
+    /**
+     * Calculates the bmi of the policyholder
+     *
+     * @return The BMI value calculated using weight and height.
+     */
+    public double calculateBMI() {
+        return (policyHolderWeight * 703) / (policyHolderHeight * policyHolderHeight);
+    }
+
+    /**
+     * Calculates the insurance policy price based on policyholder's attributes.
+     *
+     * @return The calculated policy price.
+     */
+    public double calculatePolicyPrice() {
+        double baseFee = 600;
+        if (policyHolderAge > 50) baseFee += 75;
+        if (policyHolderSmokingStatus.equalsIgnoreCase("smoker")) baseFee += 100;
+        double bmi = calculateBMI();
+        if (bmi > 35) baseFee += (bmi - 35) * 20;
+        return baseFee;
+    }
+}
